@@ -1,0 +1,17 @@
+---
+import HeaderAstro from "../components/HeaderAstro.astro";
+import Layout from "./Layout.astro";
+import "../styles/astro.css";
+import Footer from "../components/Footer.astro";
+
+const {title} = Astro.props;
+---
+<Layout title={title}>
+    <HeaderAstro />
+    <main><slot /></main>
+    <Footer />
+    <script>
+        import "../scripts/nav-astro.js"
+    </script>
+</Layout>
+
