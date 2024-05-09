@@ -1,0 +1,49 @@
+---
+import BlogAstroPost from "../../../components/BlogAstroPost.astro";
+import AstroLayout from "../../../layouts/AstroLayout.astro";
+
+const title = "Others Pages";
+
+export async function getStaticPaths() {
+
+  const allPosts = await Astro.glob('../posts/*.md');
+  const uniqueOthers = [...new Set(allPosts.map((post) => post.frontmatter.others).flat())];
+  return uniqueOthers.map((other) => {
+      const filteredPosts = allPosts.filter((post) => post.frontmatter.others.includes(other));
+      return {
+        params: {other},
+        props: {posts:filteredPosts}
+      }
+    }
+  )
+}
+const {other} = Astro.params
+const {posts} = Astro.props;
+---
+
+<AstroLayout title={title}>
+    <h1>Articles marqués avec {other}</h1>
+    <div>
+        <ul>
+            {posts.map((post) => 
+                <BlogAstroPost 
+                    src="../../post.jpg"
+                    url={post.url}
+                    title={post.frontmatter.title}
+                />
+            )}
+        </ul>
+    </div>
+</AstroLayout>
+
+<style>
+    ul{
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+  </style>
