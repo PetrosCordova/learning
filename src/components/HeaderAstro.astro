@@ -1,10 +1,12 @@
 ---
 import NavAstro from "./NavAstro.astro";
+import ThemeIcon from "./ThemeIcon.astro";
 ---
 
 <header>
     <nav>
         <div class="icons">
+            <!-- <ThemeIcon /> -->
             <NavAstro 
                 icon="fa-solid fa-house"
                 name=""
@@ -36,6 +38,12 @@ import NavAstro from "./NavAstro.astro";
                 name="blog"
                 tag="blog"
                 url="/astro/blog/"
+            />
+            <NavAstro 
+                icon=""
+                name="étiquettes"
+                tag="tags"
+                url="/astro/tags/"
             />
         </div>
     </nav>
