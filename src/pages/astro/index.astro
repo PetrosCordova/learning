@@ -1,0 +1,16 @@
+---
+import Greeting from "../../components/Greeting";
+import AstroLayout from "../../layouts/AstroLayout.astro";
+
+const title = "Page Astro";
+---
+
+<AstroLayout title={title}>
+    <section>
+        <div>
+            <h2>Mon sous-titre de blog génial</h2>
+            <Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} />
+
+        </div>
+    </section>
+</AstroLayout>
