@@ -1,0 +1,43 @@
+---
+const {url,title,src} = Astro.props;
+---
+
+<li>
+    <a href={url}>
+        <img src={src} alt={title} width="50">
+        {title}
+    </a>
+</li>
+
+<style>
+    li{
+        background-color: rgba(0,0,0,0.1);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        width: 37%;
+        border-radius: 0.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    a{
+        text-transform: capitalize;
+        text-decoration: none;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    li:hover{
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        background-color: rgba(0,0,0,0.2);
+        color: #fff;
+    }
+    a img{
+        border-radius: 100%;
+        border: 3px solid rgba(0, 0, 0, 0.2)
+    }
+</style>
