@@ -8,5 +8,7 @@ image:
     alt: "Vignette des arcs Astro."
 pubDate: 2022-07-08
 tags: ["astro", "blogging", "apprentissage en public", "réussites"]
+others: ["about","home"]
+
 ---
 Après une première semaine réussie d'apprentissage d'Astro, j'ai décidé d'en faire un peu plus. J'ai écrit et importé un petit composant de mémoire !
